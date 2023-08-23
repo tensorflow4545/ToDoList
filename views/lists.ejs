@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do List</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="box" id="heading">
+        <h1>Today is  <%= kindofday %></h1>
+    </div>
+    
+    <div class="box">
+        <% for(var i=0;i<newitemlist.length;i++){ %> 
+            <form action="/delete" method="post">
+            <div class="item">
+                <input type="checkbox" name="checkbox" onChange="this.form.submit()">
+           <p><%= newitemlist[i].name; %></p>
+            </div>  
+        <% } %>
+           </form>
+
+        <form class="items" action="/" method="post">
+            <h1>Add item to your To-do list</h1>
+            <input type="text" name="item" placeholder="New item">
+            <button type="submit" name="submit">+</button>
+            </form>
+    </div>
+
+
+   
+</body>
+</html>
